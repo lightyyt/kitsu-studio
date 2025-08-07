@@ -1,10 +1,11 @@
 # KitsuStudio
-_A Unity project to parse and edit legacy Roblox RBXL files_
-
-This Project is designed to be Cross-Platform and is tested and designed for:
-- Windows
-- Android
-- (GNU/)Linux
+<p align="center">
+  <img src="kitsu_studio_full_res.png" alt="KitsuStudio Logo" width="250" />
+</p>
+<p align="center">
+  <em>A Unity project to parse and edit legacy Roblox RBXL files</em>
+</p>
+<br/>
 
 ## Platform Support
 
