@@ -5,7 +5,12 @@
 <p align="center">
   <em>A Unity project to parse and edit legacy Roblox RBXL files</em>
 </p>
-<br/>
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-green" />
+  <img src="https://img.shields.io/github/actions/workflow/status/lightyyt/kitsu-studio/build.yml" />
+  <img src="https://img.shields.io/badge/made_out_of-boredom-orange" />
+</p>
+
 
 ## Platform Support
 
