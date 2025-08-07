@@ -1,0 +1,2 @@
+P:\Unity\kitsu-studio\Kitsu Studio\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+P:\Unity\kitsu-studio\Kitsu Studio\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
