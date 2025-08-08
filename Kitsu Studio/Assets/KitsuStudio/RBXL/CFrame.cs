@@ -13,7 +13,7 @@ namespace KitsuStudio.RBXL
 
         public CFrame(XElement element)
         {
-            X = float.Parse(element.Element("X")?.Value ?? "0", CultureInfo.InvariantCulture);
+            X = -float.Parse(element.Element("X")?.Value ?? "0", CultureInfo.InvariantCulture); //For some reason, we have to invert X axes
             Y = float.Parse(element.Element("Y")?.Value ?? "0", CultureInfo.InvariantCulture);
             Z = float.Parse(element.Element("Z")?.Value ?? "0", CultureInfo.InvariantCulture);
 

@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Globalization;
+using System.Xml.Linq;
 using KitsuStudio.Enums;
 using KitsuStudio.Helpers;
 using KitsuStudio.RBXL;
@@ -63,7 +64,7 @@ namespace KitsuStudio.Classes
                 XML.getNamed(properties, "CoordinateFrame", "CFrame")
             );
             CFrame.SetTransform(obj.transform);
-            Debug.Log(CFrame);
+            //Debug.Log(CFrame);
             
             size = XML.ToVector3(
                 XML.getNamed(properties, "Vector3", "size")
@@ -72,10 +73,13 @@ namespace KitsuStudio.Classes
             //Debug.Log(obj.transform.localScale);
             GameHelpers.SetGlobalScale(obj.transform, size);
 
+            
+            Transparency = float.Parse((XML.getNamed(properties, "float", "Transparency")?.Value ?? "0"), CultureInfo.InvariantCulture);
+            Debug.Log(XML.getNamed(properties, "float", "Transparency")?.Value + " :: " + Transparency);
             brickColor = int.Parse(XML.getNamed(properties, "int", "BrickColor")?.Value);
             //Apply brickColor
             var bc = new BrickColor(brickColor);
-            bc.ApplyToMaterialOf(obj);
+            bc.ApplyToMaterialOf(obj, Transparency);
             obj.transform.SetParent(parent.transform, true);
             return obj;
         }

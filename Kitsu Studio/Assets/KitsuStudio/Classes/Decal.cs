@@ -48,7 +48,7 @@ namespace KitsuStudio.Classes
             obj.transform.eulerAngles = DecalRotations.getFromFace(Face);
             // Always Force Scale to Vector3.one
             obj.transform.localScale = Vector3.one;
-            Debug.Log(obj.transform.lossyScale);
+            //Debug.Log(obj.transform.lossyScale);
 
             return obj;
         }

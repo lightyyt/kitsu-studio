@@ -11,6 +11,7 @@ namespace KitsuStudio.Unity
 
         public Material decalMaterial;
         public Material defaultMaterial;
+		public Material transparentMaterial;
         
         [SerializeField] private GameObject dataModel; // Basically the Rbxl root
 
@@ -21,6 +22,14 @@ namespace KitsuStudio.Unity
 
         private void Start()
         {
+            if (SelectedPlaceStorage.filePath == null)
+            {
+                Debug.LogError("File Path mustn't be null!");
+            }
+            if (dataModel == null)
+            {
+                Debug.LogError("DataModel mustn't be null! Wait... How did that even HAPPEN?!?!");
+            }
             RBXL.XMLParser.ParseFile(SelectedPlaceStorage.filePath, dataModel);
         }
         

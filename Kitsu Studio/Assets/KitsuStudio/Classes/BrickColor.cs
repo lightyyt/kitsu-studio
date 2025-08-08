@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Linq;
 using KitsuStudio.RBXL;
 using KitsuStudio.Unity;
@@ -27,12 +28,12 @@ namespace KitsuStudio.Classes
             }
         }
 
-        public Color ToColor()
+        public Color ToColor(float transparency = 0)
         {
-            return new Color(r / 255f, g / 255f, b / 255f);
+            return new Color(r / 255f, g / 255f, b / 255f, transparency);
         }
 
-        public void ApplyToMaterialOf(GameObject go)
+        public void ApplyToMaterialOf(GameObject go, float transparency)
         {
             Renderer ren = go.GetComponent<Renderer>();
             if (ren == null)
@@ -40,9 +41,17 @@ namespace KitsuStudio.Classes
                 MessageBox.instance.ShowError("Renderer not found on GameObject: "+go.name);
                 return;
             }
-
-            ren.material = EditorScene.instance.defaultMaterial;
-            ren.material.color = ToColor();
+            
+            if (transparency < 0.001) // Small threshold, just to be safe
+            {
+                ren.material = EditorScene.instance.defaultMaterial;
+            }
+            else
+            {
+                ren.material = EditorScene.instance.transparentMaterial;
+            }
+            
+            ren.material.color = ToColor(transparency);
         }
     }
 }

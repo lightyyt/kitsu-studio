@@ -15,7 +15,8 @@ namespace KitsuStudio.RBXL
             { "Workspace", typeof(Workspace) },
             { "Part", typeof(Part) },
             { "SpawnLocation", typeof(SpawnLocation) },
-            { "Decal", typeof(Decal) }
+            { "Decal", typeof(Decal) },
+            { "Model", typeof(Model) }
         };
         
         public static void ParseFile(string fileName, GameObject dataModel)

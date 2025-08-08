@@ -73,9 +73,12 @@ namespace KitsuStudio.Classes
             obj.transform.localScale = size;
 
             brickColor = int.Parse(XML.getNamed(properties, "int", "BrickColor")?.Value);
+
+			Transparency = float.Parse(XML.getNamed(properties, "float", "Transparency")?.Value ?? "0");
+            
             //Apply brickColor
             var bc = new BrickColor(brickColor);
-            bc.ApplyToMaterialOf(obj);
+            bc.ApplyToMaterialOf(obj, Transparency);
             return obj;
         }
     }
